@@ -1,7 +1,7 @@
 body{
     padding: 100px 100px 100px 100px;
 }
-.div-container{
+.topic-container{
     display: grid;
     grid-template-columns: auto auto auto;
     margin: center;
@@ -11,4 +11,15 @@ body{
 .btnTopic{
     width: 50%;
     height: 70px;
+}
+
+#gameBoard{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.btnCard{
+    width: 100px;
+    height: 70px;
+    margin-bottom: 10px;
 }
