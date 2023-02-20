@@ -5,13 +5,13 @@ for(var i = 0; i<4; i++){
         var btn = document.createElement("Button");  
         btn.setAttribute("class", "btn btn-success btnCard")
         var board = document.getElementById("gameBoard").appendChild(btn);
-        setPicture(btn);
+        setId(btn);
         //assign id here
     }
 
 }
 
-function setPicture(btn){
+function setId(btn){
     var assign = false;
     while(assign == false){
         var rnd = Math.floor(Math.random() * 4);
@@ -19,13 +19,17 @@ function setPicture(btn){
             btn.id="card"+rnd;
             rndArray.push(rnd);
             //create image
-            var image = document.createElement("img");
-            image.setAttribute("src", "img/animal" + rnd+ ".jpg");
-            image.setAttribute("class", "imageCard")
-            btn.appendChild(image);
+            setPictures(btn, rnd);
             assign = true;
         }else{
             assign = false;
         }
     }
+}
+
+function setPictures(btn, rnd){
+    var image = document.createElement("img");
+    image.setAttribute("src", "img/animal" + rnd+ ".jpg");
+    image.setAttribute("class", "imageCard")
+    btn.appendChild(image);
 }
