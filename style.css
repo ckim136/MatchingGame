@@ -1,5 +1,14 @@
+body{
+    padding: 100px 100px 100px 100px;
+}
 .div-container{
     display: grid;
     grid-template-columns: auto auto auto;
+    margin: center;
 
+}
+
+.btnTopic{
+    width: 50%;
+    height: 70px;
 }
