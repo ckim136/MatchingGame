@@ -18,6 +18,11 @@ function setPicture(btn){
         if (!rndArray.includes(rnd) || rndArray.filter(x => x === rnd).length == 1 ){
             btn.id="card"+rnd;
             rndArray.push(rnd);
+            //create image
+            var image = document.createElement("img");
+            image.setAttribute("src", "img/animal" + rnd+ ".jpg");
+            image.setAttribute("class", "imageCard")
+            btn.appendChild(image);
             assign = true;
         }else{
             assign = false;
