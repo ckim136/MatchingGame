@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+    <div id="content">
     <div id="header">
         <h1>Matching Game</h1>
     </div>
-
-    <h2>Select theme:</h2>
-    <div class="topic-container">
-        <div class="grid-item"><button class="btnTopic btn btn-info">Animals</button></div>
-        <div class="grid-item"><button class="btnTopic btn btn-info">Fruits</button></div>
-        <div class="grid-item"><button class="btnTopic btn btn-info">Colours</button></div>
+    
+    <div id="level-container">
+        <div class="grid-item"><button onclick="makeBoard(4)" class="btnLevel btn btn-info">Easy</button></div>
+        <div class="grid-item"><button onclick="makeBoard(6)" class="btnLevel btn btn-info">Medium</button></div>
+        <div class="grid-item"><button onclick="makeBoard(8)" class="btnLevel btn btn-info">Hard</button></div>
     </div>
     <div id="gameBoard">
 
+    </div>
     </div>
 </body>
 <script src="matchingGame.js"></script>

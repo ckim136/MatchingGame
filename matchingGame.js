@@ -1,22 +1,25 @@
 var rndArray = [];
 var queue = [];
 
-for(var i = 0; i<4; i++){
-    for(var j = 0; j<2; j++){
-        var btn = document.createElement("Button");  
-        btn.setAttribute("class", "btn btn-success btnCard")
-        var board = document.getElementById("gameBoard").appendChild(btn);
-        setId(btn);
-        //assign id here
+function makeBoard(level){
+    document.getElementById("level-container").style.visibility = "hidden";
+    document.getElementById("level-container").style.height = "10px";
+    for(var i = 0; i<level; i++){
+        for(var j = 0; j<2; j++){
+            var btn = document.createElement("Button");  
+            btn.setAttribute("class", "btn btn-success btnCard")
+            var board = document.getElementById("gameBoard").appendChild(btn);
+            setId(btn, level);
+        }
+    
     }
-
 }
 
-function setId(btn){
+function setId(btn, level){
     var assign = false;
 
     while(assign == false){
-        var rnd = Math.floor(Math.random() * 4);
+        var rnd = Math.floor(Math.random() * level);
         if (!rndArray.includes(rnd) || rndArray.filter(x => x === rnd).length == 1 ){
             btn.id="card"+rnd;
             rndArray.push(rnd);
@@ -36,7 +39,7 @@ function setId(btn){
 
 function setPictures(btn, rnd){
     var image = document.createElement("img");
-    image.setAttribute("src", "img/animal" + rnd+ ".jpg");
+    image.setAttribute("src", "img/animal"+ rnd+ ".jpg");
     image.setAttribute("class", "imageCard")
     btn.appendChild(image);
 }
@@ -62,7 +65,7 @@ function flipCards(btn){
             //flip back two cards in queue
             setTimeout(function(){
                 flipCardsBack();
-            }, 700);        
+            }, 500);        
         }
     }
 }
