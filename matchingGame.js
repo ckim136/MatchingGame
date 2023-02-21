@@ -58,6 +58,8 @@ function flipCards(btn){
         var second = queue[1].id;
         if(first.slice(-1) == second.slice(-1)){
             console.log("correct!")
+            queue[0].disabled = true;
+            queue[1].disabled = true;
             queue = [];
         }
         else{
