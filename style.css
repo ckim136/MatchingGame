@@ -6,14 +6,14 @@
     padding-top: 100px;
 }
 
-.topic-container{
+#level-container{
     display: grid;
     grid-template-columns: auto auto auto;
     margin: center;
 
 }
 
-.btnTopic{
+.btnLevel{
     width: 50%;
     height: 70px;
 }
