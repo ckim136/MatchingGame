@@ -42,20 +42,33 @@ function setPictures(btn, rnd){
 }
 
 function flipCards(btn){
-    console.log("flipped!!");
+    //reveal image
+    var img = btn.firstChild;
+    img.style.visibility = "visible";
+
     if(queue.length == 0){
         queue.push(btn);
     }else if(queue.length == 1){
         queue.push(btn);
         //check id
-        var first = queue[0].id.slice(-1);
-        var second = queue[1].id.slice(-1);
-        if(first == second){
+        var first = queue[0].id;
+        var second = queue[1].id;
+        if(first.slice(-1) == second.slice(-1)){
             console.log("correct!")
+            queue = [];
         }
         else{
             console.log("incorrect!")
+            //flip back two cards in queue
+            setTimeout(function(){
+                flipCardsBack();
+            }, 700);        
         }
-        queue = [];
     }
+}
+
+function flipCardsBack(){
+    var firstImage = queue[0].firstChild.style.visibility = "hidden";
+    var secondImage = queue[1].firstChild.style.visibility = "hidden";
+    queue = [];
 }
